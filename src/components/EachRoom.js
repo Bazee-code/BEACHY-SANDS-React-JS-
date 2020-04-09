@@ -54,34 +54,38 @@ class EachRoom extends React.Component {
 						</div>
 				</section>
 				<section className="mt-3 text-center">
-					<h4>Images of room</h4>
-					<div className="row">
-					{images.map(image=>{
-						return(
+					<div id="accordion">
+						<button className="btn btn-dark" data-toggle="collapse" 
+						data-target="#collapseOne">
+							VIEW ROOM IMAGES
+						</button>
+						<div className="collapse" id="collapseOne" data-parent="#accordion">
+							<div className="row">
+							{images.map(image=>{
+								return(
 							<div className="col-md-4">
-							<div className="card featured-section m-2">
-								<div className="card-body">
-									<img src={image} className="img-fluid"/>
-								</div>
+								<div className="card featured-section m-2">
+									<div className="card-body">
+										<img src={image} className="img-fluid"/>
+									</div>
 							</div>
 							</div>
 							)
 					})}
 					</div>
+						</div>
+					</div>
+					
 				</section>
 				<section>
-					<div id="accordion">
-					<div className="text-center">
-						<button className="btn btn-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-		          Room Specifications <FaAngleDoubleDown />
-		        </button>
-					</div> 
-				 
-				    <div id="collapseOne" className="collapse text-center" aria-labelledby="headingOne" data-parent="#accordion">
-		     		<div className="row mt-4 ">
+		     		<div className="row mt-4 text-center">
 		     			<div className="col-md-6 ">
 		     				<h3><u>Details</u></h3>
 		        		<p>{description}</p>
+		        		<h4><u>Extras</u></h4>
+				     		{extras.map(extra=>{
+				     			return <li>{extra}</li>
+				     		})}
 		     			</div>
 		     			<div className="col-md-6 ">
 		     				<h4><u>Info</u></h4>
@@ -92,12 +96,6 @@ class EachRoom extends React.Component {
 		     				{pets ?<h5>Pets Allowed</h5> : <h5>Pets Not Allowed</h5>}
 		     			</div>
 		     		</div>
-		     		<h4><u>Extras</u></h4>
-		     		{extras.map(extra=>{
-		     			return <li>{extra}</li>
-		     		})}
-		      </div>
-		     </div>
 				</section>
 			</React.Fragment>
 		)
