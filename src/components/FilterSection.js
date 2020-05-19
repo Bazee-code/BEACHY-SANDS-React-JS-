@@ -38,7 +38,7 @@ class FilterSection extends React.Component {
 		})
 
 		return (
-			<section className="filter-section text-center">
+			<section className="filter-section text-center darkmode">
 			<h4 className="mt-4">Choose a suitable room below</h4>
 			<div className="row mt-3">
 				<div className="col-md-3">

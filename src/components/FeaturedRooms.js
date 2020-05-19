@@ -11,7 +11,7 @@ class FeaturedRooms extends React.Component {
 		const {featuredRooms} = this.context;
 		console.log(featuredRooms);
 		return (
-			<section className="text-center py-5 bg-light">
+			<section className="text-center py-5 bg-light darkmode">
 				<h3>Featured Rooms</h3>
 				<div className="row mt-5">
 					{featuredRooms.map(room=>{
